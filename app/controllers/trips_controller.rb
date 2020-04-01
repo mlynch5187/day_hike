@@ -4,4 +4,7 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
+  def show 
+  end
+
 end
