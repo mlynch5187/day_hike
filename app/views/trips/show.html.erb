@@ -1,0 +1,8 @@
+<h1><%= @trip.name %></h1>
+<br/>
+<br/>
+<% @trip.trails.each do |trail| %>
+  <h3>Trail: <%= trail.name %></h3>
+  <p>Length: <%= trail.length %></p>
+<% end %>
+  <h3>Length of All Trails: <%= @trip.total_length %>

@@ -1,7 +1,12 @@
 class Trip < ApplicationRecord
   validates_presence_of :name, :start_date, :end_date
 
-  has_many :trails
+  has_many :trip_trails
+  has_many :trails, through: :trip_trails
+
+  def total_length
+    trails.sum(:length)
+  end
 end
 
 # - Visitors will go on many hiking trips
