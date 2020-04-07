@@ -5,5 +5,10 @@
   <h3>Trail: <%= trail.name %></h3>
   <p>Length: <%= trail.length %></p>
 <% end %>
-  <h3>Length of All Trails: <%= @trip.total_length %>
-  <h3>Average Length of All Trails: <%= @trip.average_length %>
+  <h4>Length of All Trails: <%= @trip.total_length %></h4>
+  <h4>Average Length of All Trails: <%= @trip.average_length %></h4>
+  <% @trip.trails.each do |trail| %>
+  <% if trail.length == @trip.longest_length %>
+      <h4>Longest Trail on the Trip: <%= trail.name %></h4>
+  <% end %>
+<% end %>

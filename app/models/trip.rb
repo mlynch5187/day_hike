@@ -11,6 +11,10 @@ class Trip < ApplicationRecord
   def average_length
     trails.average(:length)
   end
+
+  def longest_length
+    trails.maximum(:length)
+  end
 end
 
 # - Visitors will go on many hiking trips

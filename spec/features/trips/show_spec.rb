@@ -32,10 +32,15 @@ RSpec.describe "test trips index page", type: :feature do
   end
 
   it "shows average hiking distance of all trails" do
-
     visit "/trips/#{@green_forest.id}"
 
     expect(page).to have_content("370")
+  end
+
+  it "shows the longest trail on the trip" do
+    visit "/trips/#{@green_forest.id}"    
+
+    expect(page).to have_content("Longest Trail on the Trip: #{@gullivers_gulch.name}")
   end
 end
 
