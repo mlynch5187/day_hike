@@ -7,6 +7,10 @@ class Trip < ApplicationRecord
   def total_length
     trails.sum(:length)
   end
+
+  def average_length
+    trails.average(:length)
+  end
 end
 
 # - Visitors will go on many hiking trips

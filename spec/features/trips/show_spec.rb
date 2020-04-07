@@ -20,7 +20,6 @@ RSpec.describe "test trips index page", type: :feature do
   it "shows total hiking distance of all trails on trip" do
     visit "/trips/#{@big_mountain.id}"
 
-
     expect(page).to have_content("300")
 
     visit "/trips/#{@white_waters.id}"
@@ -28,14 +27,19 @@ RSpec.describe "test trips index page", type: :feature do
     expect(page).to have_content("230")
 
     visit "/trips/#{@green_forest.id}"
-        
+
     expect(page).to have_content("740")
+  end
+
+  it "shows average hiking distance of all trails" do
+
+    visit "/trips/#{@green_forest.id}"
+
+    expect(page).to have_content("370")
   end
 end
 
-# User Story 4 of 10
-#
 # As a visitor,
 # when I visit a hiking trip's page,
-# I see the total hiking distance
+# I see the average hiking distance
 # of all trails on that hiking trip
